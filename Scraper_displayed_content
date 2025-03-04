@@ -27,4 +27,15 @@ def scrape(url):
 
 scrape('https://books.toscrape.com/')
 
+Websites to try
+"""
+'https://toscrape.com/'
+'https://quotes.toscrape.com/'
+'https://www.scrapethissite.com/'
+'https://httpbin.org/'
+'https://www.mockaroo.com/'
+'https://finance.yahoo.com/'
+'https://www.wikipedia.org/'
+"""
+
 
