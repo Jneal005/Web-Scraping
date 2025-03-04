@@ -1,0 +1,30 @@
+#web scraper
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+
+def scrape(url):
+    #Fetch Web Page
+    response = requests.get(url)
+
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # Find all book titles
+    book_titles = soup.find_all('h3')
+    for book in book_titles:
+        title = book.a['title']  # Extract the title attribute from the <a> tag
+        print(title)
+
+    # Find all anchor tags
+    links = soup.find_all('a')
+    for link in links:
+        href = link.get('href')  # Extract the href attribute
+        if href:  # Check if href is not None
+            print(href)
+
+
+scrape('https://books.toscrape.com/')
+
+
